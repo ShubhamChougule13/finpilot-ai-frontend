@@ -1,7 +1,7 @@
-import Login from "../pages/Login";
+import Dashboard from "../pages/Dashboard";
 
 function AppRoutes() {
-  return <Login />;
+  return <Dashboard />;
 }
 
 export default AppRoutes;
