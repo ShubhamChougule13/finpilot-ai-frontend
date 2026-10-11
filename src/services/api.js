@@ -1,3 +1,7 @@
-import BASE_URL from "./authService";
+import axios from "axios";
 
-console.log(BASE_URL);
+const api = axios.create({
+  baseURL: "http://localhost:8080",
+});
+
+export default api;

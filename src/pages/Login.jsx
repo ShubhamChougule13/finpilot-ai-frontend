@@ -1,18 +1,23 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useState } from "react";
+import { loginUser } from "../services/authService";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const handleLogin = () => {
-  const loginData = {
-    email,
-    password,
-  };
+  const handleLogin = async () => {
+    const loginData = {
+      email,
+      password,
+    };
 
-  console.log(loginData);
-};
+    const response = await loginUser(loginData);
+
+    localStorage.setItem("token", response.data);
+
+    console.log("Token Saved");
+  };
   return (
     <div>
       <Navbar />

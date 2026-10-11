@@ -1,3 +1,5 @@
-const BASE_URL = "http://localhost:8080";
+import api from "./api";
 
-export default BASE_URL;
+export const loginUser = async (loginData) => {
+  return api.post("/login", loginData);
+};
